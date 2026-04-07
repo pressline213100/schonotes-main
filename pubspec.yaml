@@ -44,7 +44,7 @@ dependencies:
   http: ^1.6.0
   math_expressions: ^3.1.0
   audioplayers: ^6.1.1
-  image_cropper: ^7.1.0
+  image_cropper: any
   image: ^4.1.7
   google_fonts: ^6.1.0
   firebase_core: ^4.6.0
