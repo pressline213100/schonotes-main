@@ -10,6 +10,7 @@ import 'dart:typed_data';
 import 'dart:ui' as ui;
 import 'package:file_picker/file_picker.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+import 'package:flutter/gestures.dart';
 
 class DrawingBoard extends StatefulWidget {
   final CanvasProvider provider;
@@ -203,11 +204,11 @@ class _PageCanvasWidgetState extends State<PageCanvasWidget> {
     }
   }
   
-  bool _isDrawingDevice(PointerDeviceKind kind) {
-    return kind == PointerDeviceKind.stylus || 
-           kind == PointerDeviceKind.invertedStylus || 
-           kind == PointerDeviceKind.mouse ||
-           (kind == PointerDeviceKind.touch && widget.provider.drawWithFinger); 
+  bool _isDrawingDevice(ui.PointerDeviceKind kind) {
+    return kind == ui.PointerDeviceKind.stylus || 
+           kind == ui.PointerDeviceKind.invertedStylus || 
+           kind == ui.PointerDeviceKind.mouse ||
+           (kind == ui.PointerDeviceKind.touch && widget.provider.drawWithFinger); 
   }
 
   Widget _buildCanvasItem(CanvasItem item) {
@@ -338,13 +339,6 @@ class _PageCanvasWidgetState extends State<PageCanvasWidget> {
                final tempFile = await _writeBytesToTempFile(item.imageBytes);
                final croppedFile = await ImageCropper().cropImage(
                  sourcePath: tempFile.path,
-                 aspectRatioPresets: [
-                   CropAspectRatioPreset.square,
-                   CropAspectRatioPreset.ratio3x2,
-                   CropAspectRatioPreset.original,
-                   CropAspectRatioPreset.ratio4x3,
-                   CropAspectRatioPreset.ratio16x9
-                 ],
                  uiSettings: [
                    AndroidUiSettings(
                      toolbarTitle: 'Cropper',
@@ -503,10 +497,10 @@ class StylusArenaBlockerRecognizer extends OneSequenceGestureRecognizer {
                          provider.activeTool == ToolType.eraser ||
                          provider.activeTool == ToolType.lasso;
 
-    bool isDrawingDevice = event.kind == PointerDeviceKind.stylus || 
-                           event.kind == PointerDeviceKind.invertedStylus || 
-                           event.kind == PointerDeviceKind.mouse ||
-                           (event.kind == PointerDeviceKind.touch && provider.drawWithFinger);
+    bool isDrawingDevice = event.kind == ui.PointerDeviceKind.stylus || 
+                           event.kind == ui.PointerDeviceKind.invertedStylus || 
+                           event.kind == ui.PointerDeviceKind.mouse ||
+                           (event.kind == ui.PointerDeviceKind.touch && provider.drawWithFinger);
 
     if (isDrawingTool && isDrawingDevice) {
        startTrackingPointer(event.pointer);

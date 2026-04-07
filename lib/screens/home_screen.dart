@@ -331,7 +331,7 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-
+  void _showCreateMenu(BuildContext context, LibraryProvider library) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
