@@ -1,0 +1,40 @@
+﻿Analyzing 蝑?app...                                              
+
+   info - 'Point' is deprecated and shouldn't be used. Use 'PointVector' instead - lib\models\stroke.dart:49:43 - deprecated_member_use
+  error - The named parameter 'size' isn't defined - lib\models\stroke.dart:54:7 - undefined_named_parameter
+  error - The named parameter 'thinning' isn't defined - lib\models\stroke.dart:55:7 - undefined_named_parameter
+  error - The named parameter 'smoothing' isn't defined - lib\models\stroke.dart:56:7 - undefined_named_parameter
+  error - The named parameter 'streamline' isn't defined - lib\models\stroke.dart:57:7 - undefined_named_parameter
+  error - The named parameter 'taperStart' isn't defined - lib\models\stroke.dart:58:7 - undefined_named_parameter
+  error - The named parameter 'taperEnd' isn't defined - lib\models\stroke.dart:59:7 - undefined_named_parameter
+  error - The named parameter 'capStart' isn't defined - lib\models\stroke.dart:60:7 - undefined_named_parameter
+  error - The named parameter 'capEnd' isn't defined - lib\models\stroke.dart:61:7 - undefined_named_parameter
+  error - The named parameter 'simulatePressure' isn't defined - lib\models\stroke.dart:62:7 - undefined_named_parameter
+  error - The named parameter 'isComplete' isn't defined - lib\models\stroke.dart:63:7 - undefined_named_parameter
+  error - The getter 'x' isn't defined for the type 'Offset' - lib\models\stroke.dart:69:34 - undefined_getter
+  error - The getter 'y' isn't defined for the type 'Offset' - lib\models\stroke.dart:69:54 - undefined_getter
+  error - The getter 'x' isn't defined for the type 'Offset' - lib\models\stroke.dart:73:34 - undefined_getter
+  error - The getter 'y' isn't defined for the type 'Offset' - lib\models\stroke.dart:73:40 - undefined_getter
+  error - The getter 'x' isn't defined for the type 'Offset' - lib\models\stroke.dart:73:47 - undefined_getter
+  error - The getter 'x' isn't defined for the type 'Offset' - lib\models\stroke.dart:73:54 - undefined_getter
+  error - The getter 'y' isn't defined for the type 'Offset' - lib\models\stroke.dart:73:66 - undefined_getter
+  error - The getter 'y' isn't defined for the type 'Offset' - lib\models\stroke.dart:73:73 - undefined_getter
+  error - The getter 'x' isn't defined for the type 'Offset' - lib\models\stroke.dart:75:36 - undefined_getter
+  error - The getter 'y' isn't defined for the type 'Offset' - lib\models\stroke.dart:75:58 - undefined_getter
+warning - Unused import: 'dart:math' - lib\providers\canvas_provider.dart:5:8 - unused_import
+warning - The value of the field '_smoothness' isn't used - lib\providers\canvas_provider.dart:29:16 - unused_field
+  error - The named parameter 'path' isn't defined - lib\providers\canvas_provider.dart:85:9 - undefined_named_parameter
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\providers\canvas_provider.dart:86:65 - deprecated_member_use
+  error - There isn't a setter named 'path' in class 'Stroke' - lib\providers\canvas_provider.dart:95:27 - assignment_to_final_no_setter
+warning - Unused import: 'package:provider/provider.dart' - lib\widgets\drawing_board.dart:3:8 - unused_import
+warning - Unused import: '../models/note.dart' - lib\widgets\drawing_board.dart:6:8 - unused_import
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\drawing_board.dart:78:37 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\drawing_board.dart:212:63 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\drawing_board.dart:242:48 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\layer_panel.dart:66:50 - deprecated_member_use
+warning - Unused import: '../providers/canvas_provider.dart' - lib\widgets\stroke_painter.dart:2:8 - unused_import
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\top_toolbar.dart:27:62 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\top_toolbar.dart:60:62 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\top_toolbar.dart:66:62 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\top_toolbar.dart:111:43 - deprecated_member_use
+
