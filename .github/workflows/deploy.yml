@@ -1,35 +1,35 @@
-name: Deploy Flutter Web to GitHub Pages
+name: Deploy to GitHub Pages
 
+# 當有程式碼推送到 main 或 master 分支時自動觸發
 on:
   push:
     branches:
       - main
       - master
 
-permissions:
-  contents: write
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 'latest'
           channel: 'stable'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: flutter pub get
 
-      - name: Build Web App
-        run: flutter build web --base-href "/schonotes/" --release
+      - name: Build Web
+        # 這裡的 --base-href 必須與你的 GitHub Repo 名稱一致
+        run: flutter build web --release --base-href /schonotes-main/
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/web
