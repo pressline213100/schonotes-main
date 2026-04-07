@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import '../providers/canvas_provider.dart';
 import '../models/stroke.dart';
 import '../models/note.dart';
 import 'stroke_painter.dart';
-import 'dart:io';
+import 'dart:io' as io;
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 import 'package:file_picker/file_picker.dart';
@@ -330,6 +331,10 @@ class _PageCanvasWidgetState extends State<PageCanvasWidget> {
             ),
             onTap: () async {
                Navigator.pop(context);
+               if (kIsWeb) {
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Image Cropping mode is currently only available on Desktop/Mobile.')));
+                  return;
+               }
                final tempFile = await _writeBytesToTempFile(item.imageBytes);
                final croppedFile = await ImageCropper().cropImage(
                  sourcePath: tempFile.path,
@@ -382,9 +387,10 @@ class _PageCanvasWidgetState extends State<PageCanvasWidget> {
     );
   }
 
-  Future<File> _writeBytesToTempFile(Uint8List bytes) async {
-    final tempDir = Directory.systemTemp;
-    final file = File('${tempDir.path}/crop_${DateTime.now().millisecondsSinceEpoch}.png');
+  Future<dynamic> _writeBytesToTempFile(Uint8List bytes) async {
+    if (kIsWeb) return null;
+    final tempDir = io.Directory.systemTemp;
+    final file = io.File('${tempDir.path}/crop_${DateTime.now().millisecondsSinceEpoch}.png');
     return await file.writeAsBytes(bytes);
   }
 

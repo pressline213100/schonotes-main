@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'dart:typed_data';
+import 'dart:ui' as ui;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/file_system.dart';
 import '../models/note.dart';
@@ -273,9 +274,8 @@ class LibraryProvider extends ChangeNotifier {
         lastModified: note.lastModified,
         note: note,
      );
-     
      // Decode image to get original aspect ratio
-     decodeImageFromList(bytes).then((img) {
+     ui.decodeImageFromList(bytes, (img) {
        double width = img.width.toDouble();
        double height = img.height.toDouble();
        
